@@ -9,8 +9,8 @@ return {
 		},
 		cmd = "Neogit",
 		keys = {
-			{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
-		}
+			{ "<leader>hh", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
+		},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
