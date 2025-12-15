@@ -1,30 +1,25 @@
 return {
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		"mikavilpas/yazi.nvim",
+		version = "*",
+		event = "VeryLazy",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons",
+			{ "nvim-lua/plenary.nvim", lazy = true },
 		},
-		lazy = false,
-		---@module 'neo-tree'
-		---@type neotree.Config
+		---@type YaziConfig | {}
 		opts = {
-			window = {
-				filesystem = {
-					filtered_items = {
-						hide_dotfiles = false,
-						hide_gitignored = false,
-						hide_ignored = false,
-					},
-				},
+			open_for_directories = true,
+			keymaps = {
+				show_help = "<f1>",
 			},
-		}
+		},
+		init = function()
+			vim.g.loaded_netrwPlugin = 1
+		end,
 	},
 
 	{
-		'stevearc/oil.nvim',
+		"stevearc/oil.nvim",
 		---@module 'oil'
 		---@type oil.SetupOpts
 		opts = {
@@ -40,10 +35,6 @@ return {
 			},
 		},
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-		config = function()
-			require("oil").setup({})
-			vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-		end,
 		lazy = false,
-	}
+	},
 }

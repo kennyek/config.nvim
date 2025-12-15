@@ -23,15 +23,13 @@ return {
 				"cssls",
 				"docker_language_server",
 				"gh_actions_ls",
-				"groovyls",
 				"html",
 				"jsonls",
 				"lua_ls",
 				"markdown_oxide",
-				"ts_ls",
 				"vtsls",
 				"yamlls",
-			}
+			},
 		},
-	}
+	},
 }
