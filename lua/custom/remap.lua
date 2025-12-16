@@ -12,12 +12,14 @@ end
 vim.keymap.set("n", "<leader><leader>", ":source %<CR>", { desc = "Source current file" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+-- Code is 'c' (see lsp.lua)
+
 -- Explorer is 'e'
 vim.keymap.set({ "n", "v" }, "<leader>ee", ":Yazi<CR>", { desc = "Open yazi at the current file" })
 vim.keymap.set("n", "<leader>ew", ":Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
 vim.keymap.set("n", "<leader>et", ":Yazi toggle<CR>", { desc = "Resume the last yazi session" })
 
--- Go to is 'g'
+-- Go to is 'g' (also see lsp.lua)
 vim.keymap.set("n", "<leader>gp", goto_prev, { desc = "Jump to the previous diagnostic" })
 vim.keymap.set("n", "<leader>gn", goto_next, { desc = "Jump to the next diagnostic" })
 

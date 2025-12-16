@@ -15,21 +15,28 @@ return {
 			{ "mason-org/mason.nvim", opts = {} },
 			"neovim/nvim-lspconfig",
 		},
-		opts = {
-			ensure_installed = {
-				"bashls",
-				"biome",
-				"copilot",
-				"cssls",
-				"docker_language_server",
-				"gh_actions_ls",
-				"html",
-				"jsonls",
-				"lua_ls",
-				"markdown_oxide",
-				"vtsls",
-				"yamlls",
-			},
-		},
+		config = function()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"bashls",
+					"biome",
+					"copilot",
+					"cssls",
+					"docker_language_server",
+					"gh_actions_ls",
+					"html",
+					"jsonls",
+					"lua_ls",
+					"markdown_oxide",
+					"vtsls",
+					"yamlls",
+				},
+			})
+		end,
 	},
 }
