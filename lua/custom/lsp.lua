@@ -1,9 +1,10 @@
 vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("custom-lsp-attach", { clear = true }),
 	callback = function()
 		local builtin = require("telescope.builtin")
 
 		vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-		vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
+		vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0, desc = "Go to [D]efinition" })
 		vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 		vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
