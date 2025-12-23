@@ -29,6 +29,7 @@ return {
 					"cssls",
 					"docker_language_server",
 					"gh_actions_ls",
+					"gopls",
 					"html",
 					"jsonls",
 					"lua_ls",
