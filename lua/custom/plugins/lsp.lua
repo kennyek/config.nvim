@@ -34,6 +34,7 @@ return {
 					"jsonls",
 					"lua_ls",
 					"markdown_oxide",
+					"ols",
 					"vtsls",
 					"yamlls",
 				},
