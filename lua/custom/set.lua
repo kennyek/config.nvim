@@ -11,6 +11,18 @@ vim.opt.showmode = false
 
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
+	vim.g.clipboard = {
+		name = "xsel",
+		copy = {
+			["+"] = "xsel --nodetach -i -b",
+			["*"] = "xsel --nodetach -i -p",
+		},
+		paste = {
+			["+"] = "xsel -o -b",
+			["*"] = "xsel -o -p",
+		},
+		cache_enabled = 1,
+	}
 end)
 
 vim.opt.breakindent = true
