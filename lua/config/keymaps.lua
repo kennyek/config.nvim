@@ -57,10 +57,10 @@ map("n", "<A-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" }
 -- Clear search highlighting
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 map(
-	"n",
-	"<leader>ur",
-	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-	{ desc = "Redraw / Clear hlsearch / Diff Update" }
+  "n",
+  "<leader>ur",
+  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+  { desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 
 -- Smart search navigation (n always goes forward, N always backward)
@@ -122,19 +122,13 @@ map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
 
 -- Quickfix and location lists
-map("n", "<leader>xl", function()
-	local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
-end, { desc = "Location List" })
-
-map("n", "<leader>xq", function()
-	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
-end, { desc = "Quickfix List" })
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map("n", "<leader>xs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
+map("n", "<leader>xl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+  { desc = "LSP Definitions / references / ... (Trouble)" })
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 
 map("n", "<leader>pq", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "<leader>nq", vim.cmd.cnext, { desc = "Next Quickfix" })
@@ -187,9 +181,9 @@ map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = tr
 -- vim.pack keymaps
 map("n", "<leader>Pu", "<cmd>lua vim.pack.update()<CR>")
 map("n", "<leader>Pd", function()
-	vim.ui.input({ prompt = "Plugin name to delete: " }, function(input)
-		if input and input ~= "" then
-			pcall(vim.pack.del, { input })
-		end
-	end)
+  vim.ui.input({ prompt = "Plugin name to delete: " }, function(input)
+    if input and input ~= "" then
+      pcall(vim.pack.del, { input })
+    end
+  end)
 end, { desc = "Delete Plugin" })
