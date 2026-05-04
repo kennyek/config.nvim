@@ -26,6 +26,10 @@
       "src": "https://github.com/ThePrimeagen/harpoon",
       "version": "'harpoon2'"
     },
+    "image.nvim": {
+      "rev": "da2be65c153ba15a14a342b05591652a6df70d58",
+      "src": "https://github.com/3rd/image.nvim"
+    },
     "lualine.nvim": {
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -41,6 +45,10 @@
     "nui.nvim": {
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-colorizer.lua": {
+      "rev": "5cfe7fffbd01e17b3c1e14af85d5febdef88bd8c",
+      "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-dap": {
       "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
