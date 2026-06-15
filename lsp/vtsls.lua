@@ -22,6 +22,7 @@ local function get_vtsls_cmd()
 	return _vtsls_cmd
 end
 
+---@type vim.lsp.Config
 return {
 	cmd = get_vtsls_cmd(),
 	filetypes = {

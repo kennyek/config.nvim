@@ -1,5 +1,6 @@
 local BIOME_CONFIG = { "biome.json", "biome.jsonc" }
 
+---@type vim.lsp.Config
 return {
 	cmd = function(dispatchers, config)
 		local cmd = "biome"
