@@ -34,6 +34,11 @@
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "mini.pairs": {
+      "rev": "30cf2f01c4aaa2033db67376b9924fa2442c05d6",
+      "src": "https://github.com/nvim-mini/mini.pairs",
+      "version": "'main'"
+    },
     "neogit": {
       "rev": "d3890fc3cdf0859845a86b2be306bba01458df1a",
       "src": "https://github.com/NeogitOrg/neogit"
